@@ -4,8 +4,11 @@ Twitter-Healthcare
 ### tweepy_healthcare_finder.py 
 
 1.) Streams twitter data 
+
 2.) Filters the data based on the keywords in medical_hashtags.json
+
 3.) Organizes the twitter data into the following file structure:
+
         ## Data structure for tweets to pass into
         my_data = {
             'id': decoded['id'],
