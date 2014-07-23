@@ -1,0 +1,5 @@
+From cmd line:
+
+mongoexport --db nameOfDB -- collection nameOfCollection --fieldFile nameOfFileWithFieldsToExport.txt --csv --out nameOfCSVtoCreate.csv
+
+mongoexport --db twitter --collection twitter_healthcare --fieldFile c:\Users\fch80_000\MongoDB\field.txt --csv --out c:\Users\fch80_000\MongoDB\twitter_healthcare.csv

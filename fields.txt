@@ -1,0 +1,7 @@
+id
+text
+place.country
+place.full_name
+user.screen_name
+user.location
+entities.hashtags
