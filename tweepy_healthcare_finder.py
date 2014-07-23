@@ -15,10 +15,10 @@ def get_db(db_name):
 
 
 
-consumer_key = "lRMmr5zQ2kCWcB4AaEZRwL0Yt"
-consumer_secret = "4XfPAvae5h3SEmLxPufVa2gfCgVGEdrgLKjtAvMLqvNUD0GLcx"
-access_token = "737346366-DVHUXU6Af5fLUxKhkK6QY4OgCFGxQSk8zZ0ei8Zy"
-access_token_secret = "4K9p5vqf1yq6ktEaoMk5dfWII8oHtWL9O976RG1r1uZPk"
+consumer_key = "my_consumer_key"
+consumer_secret = "my_consumer_secret"
+access_token = "my_access_token"
+access_token_secret = "my_access_token_secret"
 
 class MongoListener(tweepy.StreamListener):
     ''' Handles data received from the stream. '''
