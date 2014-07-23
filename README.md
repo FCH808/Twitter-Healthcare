@@ -27,7 +27,9 @@ Some basic pymongo search queries on the data being streamed into the twitter.tw
 These queries can be dynamically run on the database collection as it is being streamed in.
 
 1.) location_pipeline: creates a query to find the top locations of tweets in the dataset.
+
 2.) hashtag_pipeline: creates a query to find the top hashtags in the dataset.
+
 3.) project_matches_pipeline: creates a query to return the tweets from a specific location.
 
 4.) aggregate: runs the created queries.
