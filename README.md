@@ -10,6 +10,7 @@ Twitter-Healthcare
 3.) Organizes the twitter data into the following file structure:
 
         ## Data structure for tweets to pass into mongo collection
+        
         my_data = {
             'id': decoded['id'],
             'text': decoded['text'],
