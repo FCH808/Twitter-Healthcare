@@ -2,6 +2,7 @@ import tweepy
 import pymongo
 import pprint
 import json
+import csv
 
 
 
@@ -112,12 +113,20 @@ class MongoListener(tweepy.StreamListener):
 
     ## Two streams of healthcare hashtags borrowed from: https://github.com/pratik008/HealthCare_Twitter_Analysis/tree/master/Archive%201/python_stream_scripts
 
+def make_tracklists(csv_file):
 
+        tracklist = []
+        with open(csv_file, 'rb') as d:
+            reader = csv.reader(d)
+            for row in reader:
+                if row[0] == "Raw Data":
+                    continue
+                tracklist.append(row[0].replace('#', '').strip())
+        return tracklist
 
-def get_medical_hashtags():
-    medical_hashtags = json.load(open(MEDICAL_HASHTAGS, 'r'))
-    return medical_hashtags['symplur']
-    
+def split_list(a_list):
+    half = len(a_list)/2
+    return a_list[:half], a_list[half:]
 
 if __name__ == '__main__':
 
@@ -129,13 +138,16 @@ if __name__ == '__main__':
 
     stream = tweepy.Stream(auth, listener)
 
-    MEDICAL_HASHTAGS = 'medical_hashtags.json'
+    # Read in first column of DiseaseHashtags.csv
+    track = make_tracklists('DiseaseHashtags.csv')
 
-    tracklists = get_medical_hashtags()
+    # Original is too large. Split tracklist in half.
+    tracklists  = split_list(track)
 
-    for tracklist in tracklists:
-        keyword_list = [item.replace("#", "") for item in tracklists[tracklist]]
-        stream.filter(track=keyword_list)
+
+    for track in tracklists:
+        stream.filter(track=track)
+
 
 # Alternative loop approach.
 # # Define my mongoDB database
