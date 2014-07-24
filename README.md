@@ -5,7 +5,7 @@ Twitter-Healthcare
 
 1.) Streams twitter data 
 
-2.) Filters the data based on the keywords in medical_hashtags.json
+2.) Filters the data based on the keywords in the first column of DiseaseHashtags.csv
 
 3.) Organizes the twitter data into the following file structure:
 
@@ -38,9 +38,9 @@ These queries can be dynamically run on the database collection as it is being s
 
 4.) aggregate: runs the created queries.
 
-### medical_hashtags.json
+###  DiseaseHashtags.csv
 
-json file containing the sets of keywords to filter tweets by
+csv file containing the sets of keywords to filter tweets by - first column
 
 ### fields.txt
 
